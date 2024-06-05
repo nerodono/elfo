@@ -294,6 +294,7 @@ pub fn message_impl(
             }
 
             #[message(not(Debug), #protocol name = #wrapper_name_str, elfo = #crate_)]
+            #[allow(non_camel_case_types)]
             pub struct _elfo_Wrapper(#ret);
 
             impl ::std::fmt::Debug for _elfo_Wrapper {
