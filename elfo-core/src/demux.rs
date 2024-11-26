@@ -5,7 +5,7 @@ use smallvec::SmallVec;
 use crate::{envelope::Envelope, Addr};
 
 const OPTIMAL_COUNT: usize = 5;
-type Addrs = SmallVec<[Addr; OPTIMAL_COUNT]>;
+pub(crate) type Addrs = SmallVec<[Addr; OPTIMAL_COUNT]>;
 
 // Actually, it's a private type, `pub` is for `Destination` only.
 #[derive(Default, Clone)]

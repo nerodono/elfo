@@ -14,7 +14,7 @@ pub use crate::{
     actor::{ActorMeta, ActorStartCause, ActorStartInfo, ActorStatus, ActorStatusKind},
     addr::Addr,
     config::Config,
-    context::{Context, RequestBuilder},
+    context::{send::Send, Context, RequestBuilder},
     envelope::Envelope,
     group::{ActorGroup, Blueprint, TerminationPolicy},
     local::{Local, MoveOwnership},
