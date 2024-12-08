@@ -1,5 +1,5 @@
 use std::{
-    future::{IntoFuture, Future},
+    future::{Future, IntoFuture},
     sync::Arc,
     time::{Duration, SystemTime},
 };

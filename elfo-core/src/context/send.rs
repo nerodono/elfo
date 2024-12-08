@@ -2,8 +2,8 @@
 
 use std::{
     future::{Future, IntoFuture},
-    pin::Pin,
     marker,
+    pin::Pin,
 };
 
 use idr_ebr::EbrGuard;
@@ -14,7 +14,8 @@ use crate::{
     dumping::{Direction, Dump},
     envelope::MessageKind,
     errors::{SendError, TrySendError},
-    Addr, Context, Envelope, Message, _priv::Object,
+    Addr, Context, Envelope, Message,
+    _priv::Object,
 };
 
 use super::e2m;

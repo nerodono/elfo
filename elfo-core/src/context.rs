@@ -32,8 +32,8 @@ use crate::{
 
 use self::stats::Stats;
 
-mod stats;
 mod send;
+mod stats;
 
 static DUMPER: Lazy<Dumper> = Lazy::new(|| Dumper::new(INTERNAL_CLASS));
 
@@ -412,11 +412,7 @@ impl<C, K> Context<C, K> {
     /// }
     /// # }
     /// ```
-    pub fn send_to<M: Message>(
-        &self,
-        recipient: Addr,
-        message: M,
-    ) -> send::Send<'_, M, C, K> {
+    pub fn send_to<M: Message>(&self, recipient: Addr, message: M) -> send::Send<'_, M, C, K> {
         self.send(message).to(recipient)
     }
 
@@ -452,9 +448,7 @@ impl<C, K> Context<C, K> {
         recipient: Addr,
         message: M,
     ) -> Result<(), TrySendError<M>> {
-        self.send(message)
-            .to(recipient)
-            .try_()
+        self.send(message).to(recipient).try_()
     }
 
     /// Sends a message to the specified recipient.
@@ -491,9 +485,7 @@ impl<C, K> Context<C, K> {
         recipient: Addr,
         message: M,
     ) -> Result<(), SendError<M>> {
-        self.send(message)
-            .to(recipient)
-            .unbounded()
+        self.send(message).to(recipient).unbounded()
     }
 
     #[inline(always)]
